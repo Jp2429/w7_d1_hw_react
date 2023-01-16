@@ -47,7 +47,8 @@ function App() {
     return (
       <li key={task.id}>
         <span>{task.task_name}</span><br></br>
-        <span id="prior-span">{task.priority} Priority</span>
+        {task.priority==="High" ? <span id="high-prior-span">{task.priority} Priority!!!</span>:<span id="low-prior-span">{task.priority} Priority</span>}
+        
       </li>
     )
   })

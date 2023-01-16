@@ -47,6 +47,7 @@ ul li{
   text-align: center;
   font-size: 24px;
   list-style: none;
+  background-color: beige;
   border-color: black;
   /* color:white; */
   display:flexbox;
@@ -57,9 +58,15 @@ ul li{
   border-radius:10px;
 }
 
-#prior-span{
+#high-prior-span{
+  font-size: 15px;
+  color:red;
+  font-weight:bold;
+}
+#low-prior-span{
   font-size: 14px;
 }
+
 form {
   margin:10px;
   padding:10px;
