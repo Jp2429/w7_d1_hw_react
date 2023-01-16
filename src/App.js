@@ -37,6 +37,10 @@ function App() {
   const resetForm=()=>{
     const taskInput=document.querySelector('#tasks')
     taskInput.value=""
+    const taskHighPriority=document.querySelector('#high-priority')
+    taskHighPriority.checked=false
+    const taskLowPriority=document.querySelector('#low-priority')
+    taskLowPriority.checked=false
   }
 
   const listItems = todoList.map((task) => {
