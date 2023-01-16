@@ -10,7 +10,6 @@ function App() {
     {id:2,task_name:"Buy Shopping",priority:"Low"},
     {id:3,task_name:"Car's MOT",priority:"High"}
   ])
-  // const [taskToAdd,setTask]=useState("")
   const [taskPriority,setTaskPriority]=useState("")
   const [taskName,setTaskName]=useState("")
 
@@ -27,10 +26,8 @@ function App() {
       event.preventDefault();
       const newTaskObj = { id: Date.now(), task_name:taskName,priority:taskPriority  };
       const copyOfList=[...todoList,newTaskObj]
-      // copyOfList.push(taskToAdd)
       setTodoList(copyOfList)
       setTaskName("")
-      // setTaskPriority("")
       resetForm()
     }else{
       event.preventDefault();
@@ -40,15 +37,8 @@ function App() {
   const resetForm=()=>{
     const taskInput=document.querySelector('#tasks')
     taskInput.value=""
-    const taskHigh=document.querySelector('#high-priority')
-    taskHigh.value=""
-    const taskLow=document.querySelector('#low-priority')
-    taskLow.value=""
   }
 
-  function Item(todo){
-    return <li>{todo.list}</li>
-  }
   const listItems = todoList.map((task) => {
     return (
       <li key={task.id}>
