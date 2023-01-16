@@ -30,7 +30,7 @@ function App() {
       // copyOfList.push(taskToAdd)
       setTodoList(copyOfList)
       setTaskName("")
-      setTaskPriority("")
+      // setTaskPriority("")
       resetForm()
     }else{
       event.preventDefault();
