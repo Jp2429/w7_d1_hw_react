@@ -44,11 +44,17 @@ function App() {
     taskLowPriority.checked=false
   }
 
+  const completeTodo=(id)=>{
+    const nextTodos=todoList.filter(todo=>todo.id!==id)
+    setTodoList(nextTodos)
+  }
+
   const listItems = todoList.map((task) => {
     return (
       <li key={task.id}>
         <span>{task.task_name}</span><br></br>
-        {task.priority==="High" ? <span id="high-prior-span">{task.priority} Priority!!!</span>:<span id="low-prior-span">{task.priority} Priority</span>}
+        {task.priority==="High" ? <span id="high-prior-span">{task.priority} Priority!!!</span>:<span id="low-prior-span">{task.priority} Priority</span>}<br></br>
+        <button className="complete-button" onClick={()=>completeTodo(task.id)}>Complete</button>
         
       </li>
     )
@@ -65,6 +71,7 @@ function App() {
           <input type="text" id="tasks" onChange={handleUserInput}/><br></br>
           <label htmlFor="High">High priority</label>
           <input type="radio" id="high-priority" value="High" name="priority" onChange={handlePriority}/><br></br>
+          {/* checked={priority==="High"} */}
           <label htmlFor="Low">Low priority</label>
           <input type="radio" id="low-priority" value="Low" name="priority" onChange={handlePriority}/><br></br>
           <input type="submit" value="Save" id="submit"/>
