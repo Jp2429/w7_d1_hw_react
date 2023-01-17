@@ -28,6 +28,7 @@ function App() {
       const copyOfList=[...todoList,newTaskObj]
       setTodoList(copyOfList)
       setTaskName("")
+      setTaskPriority("")
       resetForm()
     }else{
       event.preventDefault();
